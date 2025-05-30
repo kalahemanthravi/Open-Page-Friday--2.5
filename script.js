@@ -1857,6 +1857,31 @@ function speak(text) {
         }
         currentUtterance = new SpeechSynthesisUtterance(text);
         isSpeaking = true;
+
+        const voices = window.speechSynthesis.getVoices();
+        
+        // Try to select a male voice (e.g., based on name)
+        const maleVoice = voices.find(voice => 
+            voice.name.toLowerCase().includes('male') || 
+            voice.name.includes('Daniel') || 
+            voice.name.includes('Alex') || 
+            voice.name.includes('Google US English') // Adjust based on available voices
+        );
+
+        // Set the voice if found, otherwise use the default
+        if (maleVoice) {
+            currentUtterance.voice = maleVoice;
+        } else {
+            console.warn("No male voice found, using default voice.");
+            // Optionally, you can specify a fallback voice by index or name
+            // Example: currentUtterance.voice = voices[0]; // First available voice
+        }
+
+        // Optional: Customize voice settings
+        currentUtterance.volume = 1.0; // Volume (0 to 1)
+        currentUtterance.rate = 1.0;   // Speed (0.1 to 10)
+        currentUtterance.pitch = 1.0;  // Pitch (0 to 2)
+        
         recognition.stop();
         currentUtterance.onend = () => {
             isSpeaking = false;
