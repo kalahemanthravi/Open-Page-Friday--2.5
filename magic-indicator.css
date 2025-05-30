@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css?family=poppins:100,200,300,400,500,600,700,800,900');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+
+}
+
+:root {
+  --clr: #222327;
+}
+
+body {
+    background-color: var(--clr);
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+
+  
+  
+  
+  .button-t{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    left: 27px;
+  }
+  .button-{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    left: 24px;
+  }
+
+          /* Style the side navigation menu 
+    /* side nav style css */
+        /* Style the menu button */
+        .menu-btn {
+            font-size: 20px;
+            cursor: pointer;
+            padding: 15px;
+            background-color: transparent;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            top: 40px;
+            position: absolute;
+            left: 5px;
+            
+          }
+         
+        .menu-btn:hover{
+          box-shadow: 0 0 80px #3697ff;
+          transition: 1s;
+        }
+
+        button.menu-btn.ai-style-change-1 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        
+          
+          .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 0px;
+          }
+       
+          /* Style links in the side navigation menu */
+          .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #3697ff;
+            display: block;
+            transition: 0.3s;
+          }
+      
+          /* Change color on hover */
+          .sidenav a:hover {
+            color: #3697ff;
+          }
+      
+          /* Style the main content */
+          .content {
+            transition: margin-left 0.5s;
+            padding: 16px;
+          }
+      
+          /* Style the Material Symbols Outlined */
+          
+
+/* google search styles */
+
+
+.searc-input{
+  font-size: 26px;
+  outline: none;
+  background-color: white;
+  padding: 10px;
+}
+.search-form{
+  right: 50%;
+}
+
+.glowin-border {
+  border: 10px 10px white;
+  border-radius: 30px;
+  transition: border-color 0.5s ease-in-out;
+}
+
+.glowin-border:hover {
+  border-color: #3697ff;
+  box-shadow: 0 0 100px #3697ff;
+  transition: 1s;
+  
+}
+
+  @keyframes glowing {
+0% {
+  border-color: #3697ff;
+  box-shadow: 0 0 80px #3697ff;
+}
+50% {
+  border-color: #3697ff;
+  box-shadow: 0 0 90px #3697ff;
+}
+100% {
+  border-color: #3697ff;
+  box-shadow: 0 0 80px #3697ff;
+}
+}
+
+
+/*google advanced search box style css*/
+
+
+
+
+.glowin-border {
+  padding: 10px;
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  position: relative;
+  right: 3px;
+  outline: none;
+  top: -40px;
+}
+
+.google-search-likebutton{
+  position: absolute;
+  right: 343px;
+  border-radius: 50px;
+  border: none;
+  display: none;
+  outline: none;
+}

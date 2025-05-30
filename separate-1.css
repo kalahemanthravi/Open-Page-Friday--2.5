@@ -1,0 +1,502 @@
+/* buttons code */
+.button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(55, 42, 230);
+    text-size-adjust: 10px;
+    padding: 50px 60px;
+    border: none;
+    border-radius: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+.button:hover {
+    background-color: rgb(30, 179, 238);
+    transition: 1s;
+}
+
+.lable {
+    align-self: auto;
+}
+
+
+
+#container {
+    
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+    height: 75px;
+    background-color: rgb(63, 253, 63);
+    border-radius: 40px;
+    box-shadow: 0 0 150px #1d8aff;            
+    border-style: solid;
+    border-color: #5ba8fc;
+    border-width: 1px;
+}
+
+/* K.HBM main css heading */
+#start-btn {
+    position: static;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin: auto;
+  }
+
+ 
+
+
+/* buttons sections  */
+
+.buttons-section{
+    position: absolute;
+    top: 43%;
+}
+
+
+
+/* glowing border for the button section */
+
+.button {
+    border: 10px 10px white;
+
+    transition: border-color 2s ease-in-out;
+  }
+  
+  .button:hover {
+    border-color: #3697ff;
+    box-shadow: 0 0 150px #3697ff;
+    transition: 1s;  
+}
+.background-color-changer{
+    outline: none;
+    border-radius: 10px;
+    font-size: large;
+}
+.background-color-changer:hover{
+    box-shadow: 0 0 100px #3697ff;
+    transition: 2s;
+}
+#searchEngine{
+    border-radius: 20px;
+    outline: none;
+}
+#searchEngine:hover{
+    border-color: #3697ff;
+    box-shadow: 0 0 50px #3697ff;
+    transition: 1s;
+}
+
+
+/* background color changer save button */
+
+.Save-button {
+    outline: none;
+    border-radius: 5px;
+    font-size: large;
+    border: none;
+    background-color: transparent;
+    color: white;
+    padding-top: 5px;
+}
+
+.Save-button:active {
+    color: aqua;
+    transition: 1s; /* Apply transition only to the background-color property */
+}
+
+
+
+
+
+
+
+/* calculator styles */
+.cal-button1,
+ .cal-button2,
+ .cal-button3,
+ .cal-button-plus{
+    height: 35px; 
+    width: 35px; 
+    position: relative;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    color: black;
+    font-weight: bolder;
+    font-size: x-large;
+    background-color: whitesmoke;
+    cursor: pointer;
+    transition: top 0.2s, box-shadow 0.2s ease-in-out; /* Apply transition here */
+    box-shadow: none; /* Set the initial box-shadow */
+}
+
+
+
+.cal-button4,
+ .cal-button5,
+ .cal-button6,
+ .cal-button-minus{
+    height: 35px; 
+    width: 35px; 
+    position: relative;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    color: black;
+    font-weight: bolder;
+    font-size: x-large;
+    background-color: whitesmoke;
+    cursor: pointer;
+    transition: top 0.2s, box-shadow 0.2s ease-in-out; /* Apply transition here */
+    box-shadow: none; /* Set the initial box-shadow */
+}
+
+
+
+
+.cal-button7,
+ .cal-button8,
+ .cal-button9,
+ .cal-button-multiplication{
+    height: 35px; 
+    width: 35px; 
+    position: relative;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    color: black;
+    font-weight: bolder;
+    font-size: x-large;
+    background-color: whitesmoke;
+    cursor: pointer;
+    transition: top 0.2s, box-shadow 0.2s ease-in-out; /* Apply transition here */
+    box-shadow: none; /* Set the initial box-shadow */
+}
+
+
+
+
+.cal-button0,
+ .cal-buttonc,
+ .cal-button-equal,
+ .cal-button-divide{
+    height: 35px; 
+    width: 35px; 
+    position: relative;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    color: black;
+    font-weight: bolder;
+    font-size: x-large;
+    background-color: whitesmoke;
+    cursor: pointer;
+    transition: top 0.2s, box-shadow 0.2s ease-in-out; /* Apply transition here */
+    box-shadow: none; /* Set the initial box-shadow */
+}
+
+
+
+
+
+
+
+.calculator-display{
+    height: 30px;
+    width: 300px;
+    position: relative;
+    border-radius: 5px;
+    font-size: large;
+    outline: none;
+    color: aqua;
+    background-color: white;
+    border: #1d8aff;
+    border-width: 1.5px;
+    border-style: solid;
+}
+
+
+.cal-button1:active,
+.cal-button2:active,
+.cal-button3:active,
+.cal-button-plus:active,
+
+.cal-button4:active,
+ .cal-button5:active,
+ .cal-button6:active,
+ .cal-button-minus:active,
+
+ .cal-button7:active,
+ .cal-button8:active,
+ .cal-button9:active,
+ .cal-button-multiplication:active,
+
+ .cal-button0:active,
+.cal-buttonc:active,
+.cal-button-equal:active,
+.cal-button-divide:active{
+    transition: 0.2s;
+    position: relative;
+    top: 0.5px;
+    box-shadow: 0 0 40px  #1d8aff; 
+}
+ .cal-button-divide:active{
+    transition: 0.2s;
+    position: relative;
+    top: 0.5px;
+    box-shadow: 0 0 40px  #1d8aff; 
+}
+
+
+
+/* main buttons and edit panel */
+
+
+.button {
+position: relative;
+/* Keep your existing button styles */
+}
+
+
+
+.greeting {
+font-size: 24px;
+font-weight: bold;
+margin-top: 10px;
+}
+.clock {
+font-size: 24px;
+font-weight: bold;
+position: fixed;
+bottom: 10px;
+right: 10px;
+left: auto;
+}
+
+
+
+a.menu-btn {
+display: flex; /* Use flexbox for layout */
+justify-content: center; /* Center content horizontally */
+align-items: center; /* Center content vertically */
+padding-left: 8px; /* Reduce left padding */
+}
+
+
+
+
+
+#calculator {
+display: none;
+margin: 20px auto; /* Center the calculator and add spacing */
+width: 320px; /* Slightly wider than the display to accommodate buttons */
+padding: 10px;
+background-color: rgba(255, 255, 255, 0.1); /* Optional: subtle background */
+border-radius: 10px;
+}
+#calculator.active {
+display: block;
+}
+#calc-display {
+width: 100%;
+margin-bottom: 10px;
+padding: 5px;
+background: #333;
+color: #fff;
+border: none;
+border-radius: 5px;
+text-align: right;
+}
+.calc-btn {
+width: 50px;
+height: 50px;
+margin: 5px;
+font-size: 18px;
+background: #444;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+
+}
+.calc-btn:hover {
+background: #666;
+}
+
+
+#timer-display, #result-display {
+margin-top: 10px;
+font-size: 16px;
+color: #ccc;
+}
+
+.timer-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(63, 253, 63);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.timer-notification p {
+    margin: 0;
+}
+
+.dismiss-btn {
+    background: #2196F3;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#status{
+font-size: 16px;
+color: aqua; 
+text-align: center;
+}
+
+#heard{
+font-size: 16px;
+color: aqua; 
+text-align: center;
+}
+
+#response{
+font-size: 16px;
+color: aqua; 
+text-align: center;
+}
+
+
+/* timers styles */
+#timers-container div {
+    margin: 5px 0;
+    padding: 5px;
+}
+
+#timers-container .expired {
+    color: gray;
+    text-decoration: line-through;
+}
+
+
+
+
+
+
+/*ripe effect for songs buttons and others*/
+.ripple-button {
+    position: relative;
+    overflow: hidden;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #0855a8;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 3px;
+}
+
+.ripple-button:hover {
+    background-color: #0b7dda;
+}
+
+.ripple-button:focus {
+    outline: none;
+}
+
+.ripple {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: rippleEffect 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes rippleEffect {
+    to {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+
+
+/* k.EHBM headding */
+
+.k.ehbm {
+    font-family: auto;
+    font-size: 70px;
+    position: absolute;
+    text-transform: uppercase;
+    text-align: center;
+    background: linear-gradient(
+        to right,
+        #fc72ff, /* Pink */
+        #8f68ff, /* Purple */
+        #487bff, /* Blue */
+        #fc72ff,  /* Pink */
+        #00d1ff, /* Cyan */
+        #8f68ff, /* Purple */
+        #fc72ff  /* Pink */
+    );
+    background-size: 400%; /* Increased for smoother animation */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 20s linear infinite; /* Adjusted duration */
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+@keyframes animate-gradient {
+    0% {
+        background-position: 0%; /* Start from the left */
+    }
+    100% {
+        background-position: 400%; /* Move to the right */
+    }
+}

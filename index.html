@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <title>My AI Assistant</title>
+  <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg">
+
+
+    <link rel="stylesheet" href="style-text.css">
+    <link rel="stylesheet" href="separate-1.css">
+    <link rel="stylesheet" href="dropdown.css">
+    <link rel="stylesheet" href="magic-indicator.css">
+    <link rel="stylesheet" href="chatstyle.css">
+    <link rel="stylesheet" href="editbutton.css">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  
+</head>
+<body>
+    <!-- Tab Navigation -->
+    <div class="tab">
+        <button class="tablinks active" onclick="openTab(event, 'MainContent')">Open Page Friday</button>
+        <button class="tablinks" onclick="openTab(event, 'Settings')">Friday Chatbot</button>
+        <button class="tablinks" onclick="openTab(event, 'main')">Settings</button>
+    </div>
+    
+    <!-- Main Content Tab -->
+    <div id="MainContent" class="tabcontent active">
+
+        
+        <button class="menu-btn" onclick="openNav()"><span class="material-symbols-outlined">
+            settings
+            </span></button>
+           
+
+             <!-- Side navigation menu -->
+           <div id="mySidenav" class="sidenav">
+             <a href="javascript:void(0)" class="menu-btn" onclick="closeNav()">
+              <span class="material-symbols-outlined">close</span>
+               <!-- Use the Unicode for the close iconz from the Material Symbols Outlined font -->
+             </a>
+             <br><br><br><br>
+          
+          <br><br>
+          
+          <br><br>
+          <button id="editModeToggle" class="editModeToggle  ripple-button">Edit Mode</button>
+          <br><br>
+          <button id="mute-btn" class="mute---- ripple-button">Mute</button>
+
+          <br>
+          <audio id="audio-player" controls></audio>
+          
+          
+          <div id="editPanel" style="display:none;">
+            <h3>Edit Buttons</h3>
+            <label for="buttonSelect" class="edit-selectbutton-text">Select Button:</label>
+            <select id="buttonSelect"></select>
+            <label for="buttonName" class="edit-selectbutton-text">Button Name:</label>
+            <input type="text" id="buttonName">
+            <br>
+            <h5>button link:</h5> <input type="text" id="buttonLink">
+           <br><br>
+            <button id="saveChanges">Save</button>
+          
+            <button id="addButton">➕ Add New</button>
+            <button id="deleteButton">🗑️ Delete</button>
+            <br>
+            <button id="okButton">OK</button>
+          </div>
+          
+          
+          
+          
+          <div>
+            <button id="save-toggle" class="ripple-button">Save Data: ON</button>
+            <button id="ringtone-toggle" class="ripple-button">Ringtone: ON</button>
+          </div>
+          
+          <br>
+          <div id="player-controls">
+              <button id="play-btn"  class="ripple-button"><span class="material-symbols-outlined">play_arrow</span></button>
+              <button id="pause-btn" class="ripple-button"><span class="material-symbols-outlined">pause</span></button>
+              <br>
+              <button id="next-btn" class="ripple-button" style="margin-top: 5px;"><span class="material-symbols-outlined">skip_next</span></button>
+              <button id="prev-btn" class="ripple-button"><span class="material-symbols-outlined">skip_previous</span></button>
+              <br>
+              <button id="repeat-btn" class="ripple-button"style="margin-top: 5px;"><span class="material-symbols-outlined">repeat</span></button>
+              
+          </div>
+          
+           </div>
+            <!-- top nav html -->
+          <br>
+            <div class="greeting" id="greetingText"></div>
+            
+            <div id="container" >
+              <button  id="start-btn" class="k ehbm">K.EHBM</button>
+          </div>
+          <br>
+              <div id="assistant">
+                <p id="status">Say "Friday" to activate me!</p>
+                <p id="heard">Heard: </p>
+                <p id="response">Response: </p>
+          
+              </div>
+               
+                <br>
+                <div id="notifications-container"></div>
+                <div id="timers-container"></div>
+                <div id="stopwatch-display" >
+                  <span id="minutes">00</span>:<span id="seconds">00</span>:<span id="milliseconds">000</span>
+              </div>
+                <button id="startStop" class="ripple-button">Start</button>
+                <button id="reset" class="ripple-button">Reset</button>
+          
+              
+                <div id="result-display"></div>
+                <br><br>
+               
+              <form id="searchForm" onsubmit="return submitSearch()" class="search-form">
+                  <input type="text" id="searchInput" placeholder="Search..." class="glowin-border">
+                  
+                  <input type="submit" value="Search" class="google-search-likebutton">
+              </form>
+            
+          
+          
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+             
+             
+             <div id="calculator">
+              <input type="text" id="calc-display" readonly>
+              <button class="calc-btn" data-value="7">7</button>
+              <button class="calc-btn" data-value="8">8</button>
+              <button class="calc-btn" data-value="9">9</button>
+              <button class="calc-btn" data-value="+">+</button>
+              <button class="calc-btn" data-value="4">4</button>
+              <button class="calc-btn" data-value="5">5</button>
+              <button class="calc-btn" data-value="6">6</button>
+              <button class="calc-btn" data-value="-">-</button>
+              <button class="calc-btn" data-value="1">1</button>
+              <button class="calc-btn" data-value="2">2</button>
+              <button class="calc-btn" data-value="3">3</button>
+              <button class="calc-btn" data-value="*">×</button>
+              <button class="calc-btn" data-value="0">0</button>
+              <button class="calc-btn" data-value="C">C</button>
+              <button class="calc-btn" data-value="=">=</button>
+              <button class="calc-btn" data-value="/">÷</button>
+          </div>
+          
+          <div id="buttons-container"></div>
+          
+          
+          <br>
+          <div class="clock" id="clockText"></div>
+          <div class="date" id="dateText"></div>
+          
+
+          <button class="menu-button" onclick="toggleDropdown()">
+   <span class="material-symbols-outlined">
+apps
+</span>
+          </button>
+          
+          <!-- Dropdown Grid -->
+          <div class="apps-dropdown" id="dropdown">
+            <!-- Icons will be dynamically populated by JavaScript -->
+          </div>
+            
+               
+            
+           
+    </div>
+    
+    <!-- Settings Tab -->
+    <div id="Settings" class="tabcontent">
+        
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2>Friday Chatbot</h2>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">
+                    Hello sir how can i help you
+                </div>
+            </div>
+            <div class="timer-display" id="timer-display"></div>
+            <div class="audio-player" id="audio-player-container-chat">
+                <div class="song-title" id="song-title-chat"></div>
+                <audio id="audio-player-chat" controls></audio>
+                <div class="audio-controls">
+                    <button id="prev-btn-chat">Previous</button>
+                    <button id="play-pause-btn-chat">Play</button>
+                    <button id="next-btn-chat">Next</button>
+                    <button id="repeat-btn-chat">Repeat</button>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input type="text" id="chat-input" placeholder="Type your message...">
+                <button id="send-btn">Send</button> <button id="clear-btn" class="clear-btn-chat">Clear Conversation</button>
+            </div>
+        </div>
+
+        
+    </div>
+
+
+     <!-- Settings Tab -->
+     <div id="main" class="tabcontent">
+        <label for="" style="color: aqua; font-size: larger; font-weight: 100;" >Color:</label>
+        <select id="backgroundColor" onchange="changeBackgroundColor(this.value)" class="background-color-changer">
+            <option value="#222327">Dark</option>
+            <option value="skyBlue">SkyBlue</option>
+            <option value="white">White</option>
+            <option value="blue">Blue</option>
+            <option value="rgb(255, 242, 0)">yelllow</option>
+          </select>
+            <br><br>
+            <label for="customBackgroundColor" style="color: rgb(0, 255, 255); font-size: larger; font-weight: 100;">Custom Background Color:</label>
+            <br>
+    <input type="color" id="customBackgroundColor">
+    <br>
+    <button id="saveButton" class="Save-button">Save</button>
+    <br><br>
+    <h3 style="color: aqua; font-size: larger; font-weight: 100; ">Change SearchEngine:</h3>
+    <form id="searchForm" onsubmit="return submitSearch()">
+     
+      <select id="searchEngine">
+          <option value="google">Google</option>
+          <option value="bing">Bing</option>
+          <option value="yahoo">Yahoo</option>
+          <option value="yandex">Yandex</option>
+          <option value="duckduckgo">DuckDuckGo</option>
+      </select>
+    
+    </form>
+    
+    </div>
+
+    
+
+    <script>
+        // Tab functionality
+        function openTab(evt, tabName) {
+            const tabcontent = document.getElementsByClassName("tabcontent");
+            for (let i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            
+            const tablinks = document.getElementsByClassName("tablinks");
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // Save settings to localStorage
+        function saveButtonSettings(buttonId, isVisible) {
+            localStorage.setItem(`buttonVisibility_${buttonId}`, isVisible);
+        }
+        
+        // Load settings from localStorage
+        function loadButtonSettings() {
+            document.querySelectorAll('[data-button-id]').forEach(button => {
+                const buttonId = button.dataset.buttonId;
+                const isVisible = localStorage.getItem(`buttonVisibility_${buttonId}`) !== 'false';
+                
+                // Set initial visibility
+                button.classList.toggle('button-hidden', !isVisible);
+                
+                // Set corresponding checkbox state
+                const checkbox = document.querySelector(`#toggle${buttonId}`);
+                if (checkbox) {
+                    checkbox.checked = isVisible;
+                }
+            });
+        }
+        
+        // Reset all settings
+        function resetButtonSettings() {
+            document.querySelectorAll('[data-button-id]').forEach(button => {
+                const buttonId = button.dataset.buttonId;
+                localStorage.removeItem(`buttonVisibility_${buttonId}`);
+                button.classList.remove('button-hidden');
+                const checkbox = document.querySelector(`#toggle${buttonId}`);
+                if (checkbox) checkbox.checked = true;
+            });
+        }
+        
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load saved settings
+            loadButtonSettings();
+        
+            // Add event listeners to checkboxes
+            document.querySelectorAll('[id^="toggleButton"]').forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const buttonId = this.id.replace('toggle', '');
+                    const button = document.querySelector(`[data-button-id="${buttonId}"]`);
+                    
+                    if (button) {
+                        button.classList.toggle('button-hidden', !this.checked);
+                        saveButtonSettings(buttonId, this.checked);
+                    }
+                });
+            });
+            
+            // Add event listener to reset button
+            document.getElementById('resetSettings').addEventListener('click', resetButtonSettings);
+        });
+    </script>
+
+
+    <script src="script.js"></script>
+    <script src="dropdown.js"></script>
+    <script src="mainscript.js"></script>
+    <script src="chatscript.js"></script>
+</body>
+</html>

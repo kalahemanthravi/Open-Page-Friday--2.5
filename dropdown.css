@@ -1,0 +1,120 @@
+.menu-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  z-index: 999;
+  padding: 15px;
+  top: 40px;
+  right: 5px;
+}
+
+.menu-button img {
+  width: 32px;
+  height: 32px;
+}
+
+.apps-dropdown {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  width: 300px;
+  background: #202124;
+  border-radius: 20px;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  max-height: 400px;
+  overflow-y: auto; /* Vertical scrolling only */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  z-index: 998;
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.apps-dropdown.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.app-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+  user-select: none;
+}
+
+.app-icon:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.app-icon.dragging {
+  opacity: 0.5;
+  transform: scale(1.1);
+}
+
+.app-icon img {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 6px;
+}
+
+.app-label {
+  color: #fff;
+  font-size: 13px;
+}
+
+/* Custom Scrollbar Styling */
+.apps-dropdown::-webkit-scrollbar {
+  width: 10px; /* Width of the vertical scrollbar */
+}
+
+.apps-dropdown::-webkit-scrollbar-track {
+  background: transparent; /* Transparent track for a sleek look */
+  border-radius: 10px;
+}
+
+.apps-dropdown::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #4285f4, #34a853); /* Gradient for a cool effect */
+  border-radius: 10px;
+  transition: background 0.3s ease; /* Smooth transition for hover */
+}
+
+.apps-dropdown::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #34a853, #4285f4); /* Reverse gradient on hover */
+}
+
+/* Fallback for Firefox */
+.apps-dropdown {
+  scrollbar-width: thin;
+  scrollbar-color: #4285f4 #202124;
+}
+
+
+
+
+
+
+
+
+
+
+
+.material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+      font-family: 'Material Symbols Outlined';
+      font-size: 24px;
+      vertical-align: middle;
+      color: white;
+    }

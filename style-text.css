@@ -1,0 +1,88 @@
+  
+
+/* Button styles */
+.my-button {
+    padding: 10px 15px;
+    margin: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.my-button:hover {
+    background-color: #45a049;
+}
+
+/* Hidden state */
+.button-hidden {
+    display: none !important;
+}
+
+/* Settings panel */
+.settings-panel {
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+   
+}
+
+.settings-panel h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.setting-item {
+    margin: 10px 0;
+    padding: 10px;
+   
+    border-radius: 4px;
+ 
+}
+
+/* Tabs for main content/settings */
+.tab {
+    overflow: hidden;
+    
+    background-color: --clr;
+    border-radius: 4px 4px 0 0;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 4px;
+}
+
+.tab button {
+    background-color: inherit;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 16px;
+    transition: 0.3s;
+    color: white;
+}
+
+.tab button:hover {
+    background-color: #1d8aff;
+}
+
+.tab button.active {
+    background-color: #1d8aff;
+    color: white;
+}
+
+.tabcontent {
+    display: none;
+     padding: 20px;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.tabcontent.active {
+    display: block;
+}
