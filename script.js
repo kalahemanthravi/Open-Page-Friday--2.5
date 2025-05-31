@@ -1849,7 +1849,6 @@ function respond(text, callback) {
 }
 
 
-
 function speak(text) {
     if (!isMuted) {
         if (isSpeaking || window.speechSynthesis.speaking) {
@@ -1857,12 +1856,6 @@ function speak(text) {
         }
         currentUtterance = new SpeechSynthesisUtterance(text);
         isSpeaking = true;
-
-        // Optional: Customize voice settings
-        currentUtterance.volume = 1.0; // Volume (0 to 1)
-        currentUtterance.rate = 1.0;   // Speed (0.1 to 10)
-        currentUtterance.pitch = 1.0;  // Pitch (0 to 2)
-        
         recognition.stop();
         currentUtterance.onend = () => {
             isSpeaking = false;
@@ -1881,7 +1874,6 @@ function speak(text) {
         console.log("Speech skipped - assistant is muted");
     }
 }
-
 
 
 
