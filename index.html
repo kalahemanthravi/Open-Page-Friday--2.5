@@ -327,9 +327,46 @@ apps
     </script>
 
 
+    <script>
+function submitSearch() {
+    // Get search query
+    const query = document.getElementById("searchInput")?.value.trim();
+    if (!query) {
+        alert("Please enter a search term");
+        return false;
+    }
+
+    // Get selected engine
+    const engine = document.getElementById("searchEngine")?.value || "google";
+
+    // Store in localStorage if Bing is selected
+    if (engine === "bing") {
+        localStorage.setItem("lastSearchEngine", "bing");
+    }
+
+    // Define search URLs
+    const engines = {
+        google: "https://www.google.com/search?q=",
+        bing: "https://www.bing.com/search?q=",
+        yahoo: "https://search.yahoo.com/search?p=",
+        yandex: "https://yandex.com/search/?text=",
+        duckduckgo: "https://duckduckgo.com/?q="
+    };
+
+    // Open in new tab
+    const url = engines[engine] + encodeURIComponent(query);
+    window.open(url, "_blank");
+
+    return false; // prevent form submission
+}
+</script>
+
+
+
     <script src="script.js"></script>
     <script src="dropdown.js"></script>
     <script src="mainscript.js"></script>
     <script src="chatscript.js"></script>
 </body>
+
 </html>
