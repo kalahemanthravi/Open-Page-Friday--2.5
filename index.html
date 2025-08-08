@@ -327,7 +327,7 @@ apps
     </script>
 
 
-    <script>
+ <script>
 function submitSearch() {
     // Get search query
     const query = document.getElementById("searchInput")?.value.trim();
@@ -339,10 +339,8 @@ function submitSearch() {
     // Get selected engine
     const engine = document.getElementById("searchEngine")?.value || "google";
 
-    // Store in localStorage if Bing is selected
-    if (engine === "bing") {
-        localStorage.setItem("lastSearchEngine", "bing");
-    }
+    // Store in localStorage (always store the last chosen engine)
+    localStorage.setItem("lastSearchEngine", engine);
 
     // Define search URLs
     const engines = {
@@ -357,9 +355,18 @@ function submitSearch() {
     const url = engines[engine] + encodeURIComponent(query);
     window.open(url, "_blank");
 
-    return false; // prevent form submission
+    return false; // prevent default form submit
 }
+
+// When page loads, restore last search engine choice
+window.addEventListener("DOMContentLoaded", () => {
+    const savedEngine = localStorage.getItem("lastSearchEngine");
+    if (savedEngine && document.getElementById("searchEngine")) {
+        document.getElementById("searchEngine").value = savedEngine;
+    }
+});
 </script>
+
 
 
 
@@ -370,3 +377,4 @@ function submitSearch() {
 </body>
 
 </html>
+
