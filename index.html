@@ -327,7 +327,7 @@ apps
     </script>
 
 
- <script>
+<script>
 function submitSearch() {
     // Get search query
     const query = document.getElementById("searchInput")?.value.trim();
@@ -364,8 +364,17 @@ window.addEventListener("DOMContentLoaded", () => {
     if (savedEngine && document.getElementById("searchEngine")) {
         document.getElementById("searchEngine").value = savedEngine;
     }
+
+    // Save selection immediately when dropdown changes
+    const engineSelect = document.getElementById("searchEngine");
+    if (engineSelect) {
+        engineSelect.addEventListener("change", function () {
+            localStorage.setItem("lastSearchEngine", this.value);
+        });
+    }
 });
 </script>
+
 
 
 
@@ -377,4 +386,5 @@ window.addEventListener("DOMContentLoaded", () => {
 </body>
 
 </html>
+
 
