@@ -38,7 +38,7 @@
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center;    /* Center vertically */
-    max-width: 400px;
+    width: 400px;
     margin: 0 auto;
     text-align: center;
     margin-top: 50px;
@@ -499,4 +499,5 @@ text-align: center;
     100% {
         background-position: 400%; /* Move to the right */
     }
+
 }
