@@ -34,23 +34,21 @@
 
 
 #container {
-    
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center;    /* Center vertically */
-    width: 400px;
+    width: 350px;
     margin: 0 auto;
     text-align: center;
-    margin-top: 50px;
-    height: 75px;
+    margin-top: 10px;
+    height: 78px;
     background-color: rgb(63, 253, 63);
-    border-radius: 40px;
+    border-radius: 10px;
     box-shadow: 0 0 150px #1d8aff;            
     border-style: solid;
     border-color: #5ba8fc;
     border-width: 1px;
 }
-
 /* K.HBM main css heading */
 #start-btn {
     position: static;
@@ -501,3 +499,4 @@ text-align: center;
     }
 
 }
+
