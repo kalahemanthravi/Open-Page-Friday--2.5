@@ -1404,7 +1404,7 @@ recognition.onresult = (event) => {
             "Opening DeepSeek AI, enjoy!","Yes sir, loading DeepSeek AI now."
         ];
         respond(responses[Math.floor(Math.random() * responses.length)], () => {
-            window.open("https://deepseek.com/", "_blank");
+            window.open("https://chat.deepseek.com", "_blank");
             calculator.classList.remove('active');
         });
         return;
@@ -2169,4 +2169,5 @@ function calculate() {
     // for open websites
     function openURL(url) {
         window.open(url, '_blank');
+
     }
